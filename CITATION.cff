@@ -1,0 +1,112 @@
+cff-version: 1.2.0
+message: "If you use this software or the accompanying data, please cite the paper below."
+title: "VLM-as-a-Judge Evaluation for the ROGER Data Set"
+abstract: >-
+  Reference implementation for "VLM-as-a-Judge Approaches for Evaluating Visual
+  Narrative Coherence in Historical Photographical Records": caption-based and
+  direct-vision VLM judging of visual narratives extracted from the ROGER
+  archive of Robert Gerstmann's 1928 Sacambaya Expedition, scored against an
+  embedding-based coherence metric.
+type: software
+license: MIT
+repository-code: "https://github.com/briankeithn/vlm-roger-alt"
+keywords:
+  - visual narrative evaluation
+  - VLM-as-a-judge
+  - narrative extraction
+  - multimodal evaluation
+  - coherence metrics
+  - digital humanities
+authors:
+  - family-names: Keith
+    given-names: Brian
+    affiliation: "Universidad Católica del Norte"
+  - family-names: Meneses
+    given-names: Claudio
+    affiliation: "Universidad Católica del Norte"
+  - family-names: Matus
+    given-names: Mauricio
+    affiliation: "Universidad Católica del Norte"
+  - family-names: Castro
+    given-names: "María Constanza"
+    affiliation: "Universidad Católica del Norte"
+  - family-names: Urrutia
+    given-names: Diego
+    affiliation: "Universidad Católica del Norte"
+references:
+  - type: conference-paper
+    title: >-
+      Semi-Supervised Image-Based Narrative Extraction: A Case Study with
+      Historical Photographic Records
+    authors:
+      - family-names: German
+        given-names: Fausto
+      - family-names: Keith
+        given-names: Brian
+      - family-names: Matus
+        given-names: Mauricio
+      - family-names: Urrutia
+        given-names: Diego
+      - family-names: Meneses
+        given-names: Claudio
+    collection-title: "Advances in Information Retrieval (ECIR 2025)"
+    collection-type: proceedings
+    publisher:
+      name: "Springer Nature Switzerland"
+    start: 248
+    end: 262
+    year: 2025
+    doi: 10.1007/978-3-031-88711-6_16
+    notes: "Preprint: arXiv:2501.09884"
+  - type: article
+    title: >-
+      LLM-as-a-Judge Approaches as Proxies for Mathematical Coherence in
+      Narrative Extraction
+    authors:
+      - family-names: Keith
+        given-names: Brian
+    journal: Electronics
+    volume: 14
+    issue: 13
+    start: 2735
+    year: 2025
+    doi: 10.3390/electronics14132735
+  - type: article
+    title: >-
+      Narrative Maps: An Algorithmic Approach to Represent and Extract
+      Information Narratives
+    authors:
+      - family-names: "Keith Norambuena"
+        given-names: "Brian Felipe"
+      - family-names: Mitra
+        given-names: Tanushree
+    journal: "Proceedings of the ACM on Human-Computer Interaction"
+    volume: 4
+    issue: CSCW3
+    start: 1
+    end: 33
+    year: 2021
+    doi: 10.1145/3432927
+preferred-citation:
+  type: article
+  title: >-
+    VLM-as-a-Judge Approaches for Evaluating Visual Narrative Coherence in
+    Historical Photographical Records
+  authors:
+    - family-names: Keith
+      given-names: Brian
+    - family-names: Meneses
+      given-names: Claudio
+    - family-names: Matus
+      given-names: Mauricio
+    - family-names: Castro
+      given-names: "María Constanza"
+    - family-names: Urrutia
+      given-names: Diego
+  journal: Electronics
+  volume: 14
+  issue: 21
+  start: 4199
+  year: 2025
+  doi: 10.3390/electronics14214199
+  url: "https://doi.org/10.3390/electronics14214199"

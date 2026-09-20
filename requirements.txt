@@ -1,0 +1,39 @@
+# Dependencies for "VLM-as-a-Judge Approaches for Evaluating Visual Narrative
+# Coherence in Historical Photographical Records" (Electronics 2025, 14, 4199).
+#
+# Python 3.13 (the archived run used 3.13.5; see VLM-as-a-Judge.ipynb metadata).
+#
+# The upper bounds below are not arbitrary. They are the versions consistent
+# with the warnings captured in the notebook's stored output:
+#   - "use_fast is unset ... will be the default in v4.52"  -> transformers < 4.52
+#   - vlm_narratives_cache.pkl references numpy._core.*      -> numpy >= 2.0
+# Loosen them only if you are willing to re-run and re-check the numbers.
+
+# --- core numerics / data ---
+numpy>=2.0,<3
+pandas>=2.2,<3
+scipy>=1.14,<2
+scikit-learn>=1.6,<1.8
+
+# --- CLIP embeddings ---
+torch>=2.5,<3
+transformers>=4.45,<4.52
+Pillow>=10.4,<12
+
+# --- Narrative Maps linear program ---
+PuLP>=2.9,<4          # ships the CBC solver binary used by solve_LP
+networkx>=3.3,<4
+
+# --- judges ---
+openai>=1.50,<2       # GPT-4o, legacy functions/function_call API
+ollama>=0.3,<1        # only for vlm_revision_experiments.py (Qwen2.5-VL)
+
+# DTW no longer needs a third-party package: `calculate_dtw_distance` in the
+# notebook computes the distance exactly in numpy. The previous `fastdtw`
+# dependency was unmaintained (last release 2019), shipped no wheels for
+# Python 3.12+, and only ever computed a multilevel approximation.
+
+# --- plotting / misc ---
+matplotlib>=3.9,<4
+seaborn>=0.13,<0.14
+tqdm>=4.66,<5

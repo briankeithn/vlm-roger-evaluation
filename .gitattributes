@@ -1,0 +1,11 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Binary assets: never line-ending normalized, never diffed as text.
+*.jpg binary
+*.png binary
+*.npy binary
+*.pkl binary
+
+# Notebooks are JSON; keep them out of the default diff noise.
+*.ipynb -text diff=jupyter

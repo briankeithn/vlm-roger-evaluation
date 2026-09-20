@@ -1,0 +1,74 @@
+NOTICE
+======
+
+This repository is released under the MIT License (see LICENSE),
+Copyright (c) 2025 Brian Keith.
+
+It incorporates and adapts third-party material that is also MIT licensed.
+
+
+Narrative Maps implementation and ROGER dataset
+-----------------------------------------------
+
+`library/narrative_maps.py`, `data/ROGER_images/` and
+`data/roger_ground_truth.json` derive from:
+
+    faustogerman/ROGER-Concept-Narratives
+    https://github.com/faustogerman/ROGER-Concept-Narratives
+    MIT License, Copyright (c) 2025 Fausto German
+
+which accompanies:
+
+    German, F.; Keith, B.; Matus, M.; Urrutia, D.; Meneses, C.
+    "Semi-Supervised Image-Based Narrative Extraction: A Case Study with
+    Historical Photographic Records." arXiv:2501.09884, 2025.
+    (Reference [11] of the present paper.)
+
+Specifically:
+
+  * `library/narrative_maps.py` is adapted from upstream `narrative_maps.py`.
+    The changes are listed in that file's module docstring: the sliding-window
+    dictionaries were made module-level globals, `solve_LP` was added to build
+    the CLIP-based similarity tables and drive the linear program, and two
+    unused parameters were dropped.
+
+  * `data/roger_ground_truth.json` is upstream `ground_truth.json`, byte for
+    byte. It holds the six expert-curated baseline storylines and the 34
+    seed labels used for semi-supervised label spreading.
+
+  * `data/ROGER_images/` is the 501-image ROGER photograph set from upstream
+    `roger-dataset/`, byte for byte. Upstream additionally ships a cached DETR
+    embedding file inside that folder; it is not used here and is not included.
+
+Earlier revisions of this repository also carried upstream's `helpers.py`,
+`main.ipynb`, `extraction-pipeline.png`, `results-high-d.pkl` and
+`results-low-d.pkl`. None of them are used by the experiments in this paper
+(which use CLIP embeddings, not DETR), so they have been removed. They remain
+available upstream and in this repository's git history.
+
+
+Narrative Maps algorithm
+------------------------
+
+The algorithm itself is from:
+
+    Keith Norambuena, B.F.; Mitra, T. "Narrative Maps: An Algorithmic Approach
+    to Represent and Extract Information Narratives."
+    Proc. ACM Hum.-Comput. Interact. 2021, 4, 228.
+
+
+Photographic archive
+--------------------
+
+The photographs are from the Robert Gerstmann Fonds at Universidad Catolica
+del Norte, which provided access to the archive. Please retain this
+acknowledgement in any derived work.
+
+
+Models
+------
+
+Evaluation used OpenAI GPT-4o via the OpenAI API, and Qwen2.5-VL-7B served
+locally through Ollama. Visual features use OpenAI CLIP
+(`openai/clip-vit-base-patch32`) via Hugging Face Transformers. Each is subject
+to its own licence and terms of use.
